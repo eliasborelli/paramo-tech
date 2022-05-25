@@ -13,15 +13,25 @@ namespace Sat.Recruitment.Core.Entities
         public decimal Money { get; set; }
         public virtual void CalculateMoney() { }
 
-        public string GetEmailNormalize()
+        public User GetUserType()
         {
-            var aux = Email.Split(new char[] { '@' }, StringSplitOptions.RemoveEmptyEntries);
+            var user = new User();
+            switch (UserType)
+            {
+                case UserType.SuperUser:
+                    user = new SuperUser() { Address = this.Address, Email = this.Email, Name = this.Name, Phone = this.Phone, Money = this.Money, UserType = UserType.SuperUser };
+                    break;
+                case UserType.Normal:
+                    user = new NormalUser() { Address = this.Address, Email = this.Email, Name = this.Name, Phone = this.Phone, Money = this.Money, UserType = UserType.Normal };
+                    break;
+                case UserType.Premium:
+                    user = new PremiumUser() { Address = this.Address, Email = this.Email, Name = this.Name, Phone = this.Phone, Money = this.Money, UserType = UserType.Premium };
+                    break;
+                default:
+                    break;
+            }
+            return user;
 
-            var atIndex = aux[0].IndexOf("+", StringComparison.Ordinal);
-
-            aux[0] = atIndex < 0 ? aux[0].Replace(".", "") : aux[0].Replace(".", "").Remove(atIndex);
-
-            return string.Join("@", new string[] { aux[0], aux[1] });
         }
     }
 }

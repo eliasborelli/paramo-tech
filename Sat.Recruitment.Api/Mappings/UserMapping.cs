@@ -9,23 +9,15 @@ namespace Sat.Recruitment.Api.Mappings
     {
         public User MapFromUserRequestDtoToUserDomain(UserRequestDTO userRequestDTO)
         {
-            var user = new User();
-            switch ((UserType)Enum.Parse(typeof(UserType), userRequestDTO.UserType))
+            return new User()
             {
-                case UserType.SuperUser:
-                    user = new SuperUser() { Address = userRequestDTO.Address, Email = userRequestDTO.Email, Name = userRequestDTO.Name, Phone = userRequestDTO.Phone, Money = userRequestDTO.Money, UserType = UserType.SuperUser };
-                    break;
-                case UserType.Normal:
-                    user = new NormalUser() { Address = userRequestDTO.Address, Email = userRequestDTO.Email, Name = userRequestDTO.Name, Phone = userRequestDTO.Phone, Money = userRequestDTO.Money, UserType = UserType.Normal };
-                    break;
-                case UserType.Premium:
-                    user = new PremiumUser() { Address = userRequestDTO.Address, Email = userRequestDTO.Email, Name = userRequestDTO.Name, Phone = userRequestDTO.Phone, Money = userRequestDTO.Money, UserType = UserType.Premium };
-                    break;
-                default:
-                    break;
-            }
-            return user;
+                Address = userRequestDTO.Address,
+                Email = userRequestDTO.Email.ToLower().Trim(),
+                Money = userRequestDTO.Money,
+                Name = userRequestDTO.Name,
+                Phone = userRequestDTO.Phone,
+                UserType = (UserType)Enum.Parse(typeof(UserType), userRequestDTO.UserType)
+            };
         }
-
     }
 }

@@ -21,13 +21,13 @@ namespace Sat.Recruitment.Services.Services
 
         public async Task<Result<string>> CreateUser(User user)
         {
-            user.CalculateMoney();
-            string emailNormalize = user.GetEmailNormalize();
+            var usertype = user.GetUserType();
+            usertype.CalculateMoney();
 
             var users = await _userRepository.GetUsers();
 
             //Find Duplicated
-            var duplicated = users.FirstOrDefault(u => (u.Email == emailNormalize || u.Phone == user.Phone) || (u.Name == user.Name && u.Address == user.Address));
+            var duplicated = users.FirstOrDefault(u => (u.Email == user.Email || u.Phone == user.Phone) || (u.Name == user.Name && u.Address == user.Address));
 
             if ((duplicated is null) is false)
                 return Result.Failed<string>("User is duplicated");
