@@ -5,13 +5,15 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Api", "Sat.Recruitment.Api\Sat.Recruitment.Api.csproj", "{1F342EA2-E7B1-4E53-AB93-9C62288D3FB0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Test", "Sat.Recruitment.Test\Sat.Recruitment.Test.csproj", "{42E696E9-2672-4B91-AD96-353A69F7219C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Services", "Services\Sat.Recruitment.Services\Sat.Recruitment.Services.csproj", "{D89EF175-2C30-4B72-87AF-3718F1D536E8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sat.Recruitment.Core", "Core\Sat.Recruitment.Core\Sat.Recruitment.Core.csproj", "{47EDDF67-9334-401B-9BA0-8C2EB4DD6089}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.Infraestructure", "Infraestructure\Sat.Recruitment.Infraestructure\Sat.Recruitment.Infraestructure.csproj", "{17A7E9BC-45F5-4F81-A672-DB114A778F90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4C22A54D-B792-4567-85AF-783EB77DC847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sat.Recruitment.Test", "test\Sat.Recruitment.Test\Sat.Recruitment.Test.csproj", "{53DF1E68-566A-4917-B945-463B72EA4E05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,6 @@ Global
 		{1F342EA2-E7B1-4E53-AB93-9C62288D3FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F342EA2-E7B1-4E53-AB93-9C62288D3FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F342EA2-E7B1-4E53-AB93-9C62288D3FB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42E696E9-2672-4B91-AD96-353A69F7219C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42E696E9-2672-4B91-AD96-353A69F7219C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42E696E9-2672-4B91-AD96-353A69F7219C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42E696E9-2672-4B91-AD96-353A69F7219C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D89EF175-2C30-4B72-87AF-3718F1D536E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D89EF175-2C30-4B72-87AF-3718F1D536E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D89EF175-2C30-4B72-87AF-3718F1D536E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,9 +37,16 @@ Global
 		{17A7E9BC-45F5-4F81-A672-DB114A778F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17A7E9BC-45F5-4F81-A672-DB114A778F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17A7E9BC-45F5-4F81-A672-DB114A778F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53DF1E68-566A-4917-B945-463B72EA4E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53DF1E68-566A-4917-B945-463B72EA4E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53DF1E68-566A-4917-B945-463B72EA4E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53DF1E68-566A-4917-B945-463B72EA4E05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{53DF1E68-566A-4917-B945-463B72EA4E05} = {4C22A54D-B792-4567-85AF-783EB77DC847}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2A05765-05B9-484D-8D3D-506849EB716F}
